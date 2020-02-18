@@ -3,7 +3,7 @@ package hudson.plugins.sloccount;
 import hudson.model.Run;
 import hudson.model.Job;
 import hudson.model.Action;
-import hudson.util.ChartUtil;
+
 import java.io.IOException;
 import org.kohsuke.stapler.StaplerRequest;
 import org.kohsuke.stapler.StaplerResponse;
@@ -129,12 +129,9 @@ public class SloccountProjectAction implements Action {
     public void doTrendMap(final StaplerRequest request, final StaplerResponse response) throws IOException {
         SloccountBuildAction lastAction = getLastFinishedBuildAction();
 
-        ChartUtil.generateClickableMap(
-                request,
-                response,
-                SloccountChartBuilder.buildChart(lastAction, numBuildsInGraph),
-                CHART_WIDTH,
-                CHART_HEIGHT);
+        new SloccountGraph(
+                () -> SloccountChartBuilder.buildChart(lastAction, numBuildsInGraph)
+        ).doMap(request, response);
     }
 
     /**
@@ -150,12 +147,9 @@ public class SloccountProjectAction implements Action {
     public void doTrend(final StaplerRequest request, final StaplerResponse response) throws IOException {
         SloccountBuildAction lastAction = getLastFinishedBuildAction();
 
-        ChartUtil.generateGraph(
-                request,
-                response,
-                SloccountChartBuilder.buildChart(lastAction, numBuildsInGraph),
-                CHART_WIDTH,
-                CHART_HEIGHT);
+        new SloccountGraph(
+                () -> SloccountChartBuilder.buildChart(lastAction, numBuildsInGraph)
+        ).doPng(request, response);
     }
     
     /**
@@ -171,12 +165,9 @@ public class SloccountProjectAction implements Action {
     public void doTrendDeltaMap(final StaplerRequest request, final StaplerResponse response) throws IOException {
         SloccountBuildAction lastAction = getLastFinishedBuildAction();
 
-        ChartUtil.generateClickableMap(
-                request,
-                response,
-                SloccountChartBuilder.buildChartDelta(lastAction, numBuildsInGraph),
-                CHART_WIDTH,
-                CHART_HEIGHT);
+        new SloccountGraph(
+                () -> SloccountChartBuilder.buildChartDelta(lastAction, numBuildsInGraph)
+        ).doMap(request, response);
     }
 
     /**
@@ -192,11 +183,8 @@ public class SloccountProjectAction implements Action {
     public void doTrendDelta(final StaplerRequest request, final StaplerResponse response) throws IOException {
         SloccountBuildAction lastAction = getLastFinishedBuildAction();
 
-        ChartUtil.generateGraph(
-                request,
-                response,
-                SloccountChartBuilder.buildChartDelta(lastAction, numBuildsInGraph),
-                CHART_WIDTH,
-                CHART_HEIGHT);
+        new SloccountGraph(
+                () -> SloccountChartBuilder.buildChartDelta(lastAction, numBuildsInGraph)
+        ).doPng(request, response);
     }
 }
