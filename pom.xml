@@ -61,34 +61,34 @@
       <version>2.0</version>
       <optional>true</optional>
     </dependency>
-    <dependency>  
-      <groupId>org.jenkins-ci.plugins.workflow</groupId>  
-      <artifactId>workflow-step-api</artifactId>  
-      <version>2.6</version>  
+    <dependency>
+      <groupId>org.jenkins-ci.plugins.workflow</groupId>
+      <artifactId>workflow-step-api</artifactId>
+      <version>2.6</version>
     </dependency>
-    <dependency>  
-      <groupId>org.jenkins-ci.plugins.workflow</groupId>  
-      <artifactId>workflow-job</artifactId>  
-      <version>1.14</version>  
-    </dependency>  
-    <dependency>  
-      <groupId>org.jenkins-ci.plugins.workflow</groupId>  
-      <artifactId>workflow-cps</artifactId>  
+    <dependency>
+      <groupId>org.jenkins-ci.plugins.workflow</groupId>
+      <artifactId>workflow-job</artifactId>
+      <version>1.14</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jenkins-ci.plugins.workflow</groupId>
+      <artifactId>workflow-cps</artifactId>
       <version>1.15</version>
-    </dependency>  
+    </dependency>
 
-    <!-- dependencies on Jenkins Pipeline plugins for tests-->  
-    <dependency>  
-      <groupId>org.jenkins-ci.plugins.workflow</groupId>  
-      <artifactId>workflow-support</artifactId>  
+    <!-- dependencies on Jenkins Pipeline plugins for tests-->
+    <dependency>
+      <groupId>org.jenkins-ci.plugins.workflow</groupId>
+      <artifactId>workflow-support</artifactId>
       <version>1.15</version>
-      <scope>test</scope>  
+      <scope>test</scope>
     </dependency>
-    <dependency>  
-        <groupId>org.jenkins-ci.plugins.workflow</groupId>  
-        <artifactId>workflow-basic-steps</artifactId>  
-        <version>2.0</version>  
-        <scope>test</scope>  
+    <dependency>
+        <groupId>org.jenkins-ci.plugins.workflow</groupId>
+        <artifactId>workflow-basic-steps</artifactId>
+        <version>2.0</version>
+        <scope>test</scope>
     </dependency>
   </dependencies>
 
