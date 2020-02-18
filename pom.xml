@@ -76,6 +76,12 @@
       <artifactId>slf4j-jdk14</artifactId>
       <version>1.7.26</version>
     </dependency>
+    <!-- Jakarta modules (these used to be part of Java EE) -->
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <version>2.2.12</version>
+    </dependency>
     <!-- Jenkins dependencies -->
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
