@@ -1,5 +1,6 @@
 package hudson.plugins.sloccount.model;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import jenkins.MasterToSlaveFileCallable;
 import hudson.plugins.sloccount.model.cloc.ClocReport;
 import hudson.plugins.sloccount.util.FileFinder;
@@ -26,6 +27,10 @@ public class SloccountParser extends
 
     private final String encoding;
     private final String filePattern;
+    @SuppressFBWarnings(
+            value = "URF_UNREAD_FIELD",
+            justification = "This logger field may only be used in debug builds, when LOG_ENABLED is true."
+    )
     private transient PrintStream logger = null;
     private final boolean commentIsCode;
 
