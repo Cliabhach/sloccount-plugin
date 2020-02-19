@@ -107,7 +107,7 @@ public class SloccountPublisherStep extends Step implements Serializable {
  
         @Override 
         public String getFunctionName() { 
-            return "sloccountPublish"; 
+            return "sloccountExPublish";
         } 
 
         @Override 
@@ -119,7 +119,7 @@ public class SloccountPublisherStep extends Step implements Serializable {
         @Nonnull
         @Override 
         public String getDisplayName() { 
-            return "Publish Sloccount reports"; 
+            return "Publish Sloccount EX reports";
         } 
      } 
     
@@ -156,7 +156,7 @@ public class SloccountPublisherStep extends Step implements Serializable {
 
         @Override  
         protected Void run() throws Exception {  
-            listener.getLogger().println("Running Sloccount Publisher step");  
+            listener.getLogger().println("Running Sloccount EX Publisher step");
 
             SloccountPublisher publisher = new SloccountPublisher(step.getPattern(),
                     step.getEncoding(), step.getCommentIsCode(),

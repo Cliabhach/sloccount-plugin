@@ -37,7 +37,7 @@ public class SloccountPublisherStepTest extends Assert {
         foo.setDefinition(new CpsFlowDefinition(StringUtils.join(Arrays.asList( 
                 "node {", 
                 "  writeFile file: 'sloc.xml', text: '<?xml version=\"1.0\" ?><results><files><file code=\"50\" comment=\"50\" language=\"C/C++\" name=\"file.h\"/><file code=\"300\" comment=\"100\" language=\"C/C++\" name=\"file.c\"/></files></results>'",
-                "  sloccountPublish ( ",
+                "  sloccountExPublish ( ",
                 "     pattern: 'sloc.xml',",
                 "     encoding: '',",
                 "     commentIsCode: false,",
